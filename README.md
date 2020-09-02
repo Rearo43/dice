@@ -9,6 +9,7 @@
         - [Phase 2](#phase-2)
         - [Phase 3](#phase-3)
         - [Phase 4](#phase-4)
+    - [Software Requirements](#software-requirements)
     - [Installation](#installation)
     - [UML Data Model](#uml-data-model)
     - [Approach to Testing](#approach-to-testing)
@@ -33,6 +34,8 @@ This project utilizes GitHub Workflow / Projects boards. You can visit this boar
 
 #### Phase 4
 
+## Software Requirements
+Please visit this link to view the [Software Requirements](./requirements.md)
 
 ## Installation
 - Clone down a copy of the repository.
