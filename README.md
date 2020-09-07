@@ -71,3 +71,9 @@ This project is under the MIT License.
 
 ## Acknowledgements / Resources
 - none
+
+
+## Local development 
+#### start engrock 
+./ngrok http 3000
+
