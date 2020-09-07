@@ -2,13 +2,14 @@
 
 // TO GO ON INDEX.JS
 
+// example:
 // user should type /countdown 00:00:10
 // to start a 10 second countdown
-app.command('/countdown', async ({ command, ack, say }) => {
+app.command('/countdown', async ({ message, ack, say }) => {
 
   await ack();
-  console.log(command);
-  let output = setCountdown(command);
+  console.log(message);
+  let output = setCountdown(message.text);
 
   await say (output);
 
