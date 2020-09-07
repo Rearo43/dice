@@ -1,5 +1,7 @@
 'use strict';
 
+/** will need to rework since coinflip logic has changed */
+
 const coinFlip = require('../../coinFlip.js');
 
 const mathSpy = jest.spyOn(Math, 'random');

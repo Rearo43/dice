@@ -4,7 +4,7 @@
   "description": "A basic template to spin up a Bolt app for Slack",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node .",
     "test": "jest --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose",
     "build": "webpack"
