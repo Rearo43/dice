@@ -31,7 +31,7 @@ app.message('set timer', async ({ message, say }) => {
 
 (async () => {
   // Start your app
-  await app.start(3000);
+  await app.start(process.env.PORT);
 
   console.log('⚡️ Bolt app is running!');
 
