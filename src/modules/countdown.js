@@ -2,34 +2,31 @@
 
 /**
  * @function setCountdown responds to Slash Command '/countdown' when a valid time input in HH:MM:SS format follows the command
- * @param {object} command returns information related to user input object, including these properties:
+ * @param {object} command an object containing information related to user input object, including these properties:
  * user_id,
- * command,
  * text
  * @param {function} say prompts app to output the response passed into it as a parameter
  */
 const setCountdown = async (command, say) => {
 
   /**
-   * @var regx - a regular expression that checks the user input (command.text) matches the pattern. It must be [[0-9][0-9]]:[[0-5][0-9]]:[[0-5][0-9]].
-   * The first digit in the minutes and seconds column must not be 6 or higher, indicating that the user can not pass in 60 minutes or 60 seconds, and must instead format them as 01 hours or 01 minutes, respectively.
+   * @var regx : a regular expression pattern to be checked against the User Input (command.text). User Input must match [[0-9][0-9]]:[[0-5][0-9]]:[[0-5][0-9]].
    */
   let regx = /^[0-9]{2}[:]{1}[0-5]{1}[0-9]{1}[:]{1}[0-5]{1}[0-9]{1}$/;
 
-  /**
-   * @var time - a string representing the time the user wants to set a countdown for, in HH:MM:SS format, passed by the user in command.text
-   */
   let time = command.text;
   let valid = regx.test(time);
 
   if (valid) {
-    await say(`Setting timer for ${time} for <@${command.user_id}>.`);
+    /* bot alerts user that a countdown will be set */
+    await say(`Setting countdown for ${time} for <@${command.user_id}>.`);
 
     /**
-     * @var millis - represents milliseconds, which are returned by the conversion helper function convertHMS
+     * @var millis : an integer representing milliseconds, which are returned by the conversion helper function convertHMS
      */
     let millis = convertHMS(time);
 
+    /* bot alerts user their countdown is complete when millis have elapsed */
     setTimeout(async () => {
       await say(`<@${command.user_id}>, your ${time} is up!`);
     }, millis);
