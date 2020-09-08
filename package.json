@@ -8,12 +8,13 @@
     "test": "jest --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose",
     "build": "webpack"
+
   },
   "dependencies": {
-    "@slack/bolt": "^1.6.0",
+    "@slack/bolt": "^1.8.1",
     "dotenv": "^8.2.0",
     "http": "0.0.1-security",
-    "moment": "^2.27.0"
+    "moment": "^2.27.0",
     "lodash": "^4.17.20"
   },
   "engines": {
