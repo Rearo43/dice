@@ -83,6 +83,27 @@ describe('get timer method: ', () => {
             upTimer.getTimer(newInput, getsay)
     expect(getsay).toHaveBeenLastCalledWith(`Timer for <@random> is not set yet.`);
             })
+        
+    it('Should return correct message to user if user wants to get timer for someone else, but didnt set up it yet', () => {
+        let inputForAnotherUser_Two= {
+            token: 'VHriEuGVXp8ptnrWyRRBbjom',
+            team_id: 'T01AK5QP3C1',
+            team_domain: 'katesspace-workspace',
+            channel_id: 'C019ZQMTXU6',
+            channel_name: 'custombot',
+            user_id: 'U01A6GQHFGA..',
+            user_name: 'kshydlovska',
+            command: '/settimer',
+            text: ' for @someones',
+            api_app_id: 'A01AWD35QJC',
+            response_url: 'https://hooks.slack.com/commands/T01AK5QP3C1/1374110343792/iXBxmIGluS99hf2UYGoD0UKj',
+            trigger_id: '1347185056581.1359194785409.c3a9f29bb1f54cad5bfd126f3e0ad756'
+            }
+            let getsay= jest.fn();
+                
+             upTimer.getTimer(inputForAnotherUser_Two, getsay)
+        expect(getsay).toHaveBeenLastCalledWith(`Timer for <@someones> is not set yet.`);
+                })
 });
 
  describe('stop timer method: ', () => {
@@ -121,4 +142,25 @@ describe('get timer method: ', () => {
       
         upTimer.stopTimer(newInput, stopsay)
     expect(stopsay).toHaveBeenLastCalledWith(`Timer for <@random_user> is not set yet.`);
+
+    it('Should return correct message to user if user wants to stop timer for someone else, but didnt set up it yet', () => {
+        let inputForAnotherUser_Two= {
+            token: 'VHriEuGVXp8ptnrWyRRBbjom',
+            team_id: 'T01AK5QP3C1',
+            team_domain: 'katesspace-workspace',
+            channel_id: 'C019ZQMTXU6',
+            channel_name: 'custombot',
+            user_id: 'U01A6GQHFGA..',
+            user_name: 'kshydlovska',
+            command: '/settimer',
+            text: ' for @someones',
+            api_app_id: 'A01AWD35QJC',
+            response_url: 'https://hooks.slack.com/commands/T01AK5QP3C1/1374110343792/iXBxmIGluS99hf2UYGoD0UKj',
+            trigger_id: '1347185056581.1359194785409.c3a9f29bb1f54cad5bfd126f3e0ad756'
+            }
+            let stoPsay= jest.fn();
+                
+             upTimer.stopTimer(inputForAnotherUser_Two, stoPsay)
+        expect(stoPsay).toHaveBeenLastCalledWith(`Timer for <@someones> is not set yet.`);
+                })
  });
