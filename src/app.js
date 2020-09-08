@@ -41,13 +41,12 @@ app.command('/gettimer', async({command, ack, say}) => {
   upTimer.getTimer(command, say);
 });
 
-app.command('/countdown', async ({ message, ack, say }) => {
+app.command('/countdown', async ({ command, ack, say }) => {
+  console.log(command);
   await ack();
-  let output = setCountdown(message.text);
-  await say(output);
+  await setCountdown.setCountdown(command, say);
 });
 
-// All the room in the world for your code
 app.command('/coinflip', async ({ command, ack, say }) => {
   await ack();
   await say(CoinFlipper.flip(command));
