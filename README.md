@@ -59,8 +59,8 @@ $ touch .env # Note the . before env as this is a hidden file
 After it is created you will need to add the following key value pairs
 
 ```bash
-BOT_USER_TOKEN: # This is the OAuth Bot token provided to you after creating a new Slack App
-SLACK_SIGNING_SECRET: # Slack Signing Token provided to you after creating a new Slack App
+BOT_USER_TOKEN: # This is the Bot User OAuth token provided to you after creating a new Slack App
+SLACK_SIGNING_SECRET: # Slack Signing Secret provided to you after creating a new Slack App
 PORT: # Port number that you wish to use when running locally
 ```
 
