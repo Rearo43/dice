@@ -1,24 +1,27 @@
 {
-  "name": "bolt-app-template",
-  "version": "0.0.1",
-  "description": "A basic template to spin up a Bolt app for Slack",
-  "main": "index.js",
+  "name": "botbot",
+  "version": "3.0.0",
+  "contributors": [{"name": "cas ibrahim"}, {"name": "reagan roberts"}, {"name": "kateryna shydlovska"}, {"name": "joseph zabaleta"}],
+  "description": "a helpful bot to automate decisions",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/app.js",
     "test": "jest --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose",
     "build": "webpack"
   },
   "dependencies": {
-    "@slack/bolt": "^1.6.0",
+    "@slack/bolt": "^1.8.1",
     "dotenv": "^8.2.0",
-    "http": "0.0.1-security"
+    "http": "0.0.1-security",
+    "moment": "^2.27.0",
+    "lodash": "^4.17.20"
   },
   "engines": {
     "node": "11.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/bolt-app-template"
+    "url": "https://github.com/401Mid/project"
   },
   "license": "MIT",
   "keywords": [
@@ -27,7 +30,6 @@
     "express"
   ],
   "devDependencies": {
-    "jest": "^26.4.2",
-    "jest-mock-random": "^1.1.0"
+    "jest": "^26.4.2"
   }
 }

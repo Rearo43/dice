@@ -21,19 +21,15 @@ function dieRoll(sides = 6, rolls = 1) {
 
 
 //-------------------TEST
-// import { mockRandom, resetMockRandom } from 'jest-mock-random';
- 
-// describe('Test with random usage', () => {
-//   it('assigns random the values that we want to mock in order', () => {
-//     mockRandom(0.1);
-//     const actual = Math.random();
- 
-//     expect(actual).toEqual(0.1);
- 
-//     resetMockRandom();
-//   });
-// });
+const randomSpy = jest.spyOn(Math, 'random');
 
+afterAll(() => {
+  randomSpy.mockRestore();
+});
+
+it('Should roll the number 5', () => {
+  
+});
 it('Should run defaults', () => {
   expect(dieRoll()).toBeGreaterThanOrEqual(1);
   expect(dieRoll()).toBeLessThan(7);
