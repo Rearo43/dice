@@ -10,6 +10,8 @@ const upTimer = require('./modules/timer.js');
 
 const setCountdown = require('./modules/countdown.js');
 
+const dieRoll = require('./modules/dieRoll.js');
+
 
 const { App } = require('@slack/bolt');
 
@@ -51,6 +53,11 @@ app.command('/countdown', async ({ message, ack, say }) => {
 app.command('/coinflip', async ({ command, ack, say }) => {
   await ack();
   await say(CoinFlipper.flip(command));
+});
+
+app.command('/dieroll', async ({ command, ack, say }) => {
+  await ack();
+  await say(dieRoll());
 });
 
 

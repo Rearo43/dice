@@ -1,7 +1,20 @@
 {
   "name": "botbot",
   "version": "3.0.0",
-  "contributors": [{"name": "cas ibrahim"}, {"name": "reagan roberts"}, {"name": "kateryna shydlovska"}, {"name": "joseph zabaleta"}],
+  "contributors": [
+    {
+      "name": "cas ibrahim"
+    },
+    {
+      "name": "reagan roberts"
+    },
+    {
+      "name": "kateryna shydlovska"
+    },
+    {
+      "name": "joseph zabaleta"
+    }
+  ],
   "description": "a helpful bot to automate decisions",
   "main": "app.js",
   "scripts": {
