@@ -11,13 +11,12 @@ app.command('/countdown', async ({ message, ack, say }) => {
   console.log(message);
   let output = setCountdown(message.text);
 
-  await say (output);
+  await say(output);
 
 });
 
-// PLAIN 
-const setCountdown = async ({ message, say }) => {
 
+const setCountdown = async ({ message, say }) => {
   // validate input pattern using regex
   let regx = /^[0-9]{2}[:]{1}[0-5]{1}[0-9]{1}[:]{1}[0-5]{1}[1-9]{1}$/;
 
@@ -25,7 +24,6 @@ const setCountdown = async ({ message, say }) => {
 
   if (time.match(regx)) {
     let millis = convertHMS(time);
-  
     setTimeout( async () => 
       await say(`<@${message.user}>, your ${time} is up!`), millis);
 
