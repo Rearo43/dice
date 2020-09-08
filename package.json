@@ -20,8 +20,7 @@
   "scripts": {
     "start": "node src/app.js",
     "test": "jest --coverage --verbose",
-    "watch": "jest --watchAll --coverage --verbose",
-    "build": "webpack"
+    "watch": "jest --watchAll --coverage --verbose"
   },
   "dependencies": {
     "@slack/bolt": "^1.8.1",
