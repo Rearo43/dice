@@ -7,6 +7,11 @@
     - [Software Requirements](#software-requirements)
     - [Installation](#installation)
     - [Deployment](#deployment)
+    - [Commands](#commands)
+        - [Timer](#timer)
+        - [Countdown](#countdown)
+        - [DieRoll](#dieroll)
+        - [CoinFlip](#coinflip)
     - [UML Data Model](#uml-data-model)
     - [Approach to Testing](#approach-to-testing)
     - [Authors](#authors)
@@ -20,12 +25,10 @@
 This project utilizes GitHub Workflow / Projects boards. You can visit this board and see agile practices in action by clicking the link below.
 [Workflow Board](https://github.com/orgs/401Mid/projects/1)
 
----
 
 ## Software Requirements
 Please visit this link to view the [Software Requirements](./requirements.md)
 
----
 
 ## Installation
 First clone down a copy of the repository from here [Repo Link](https://github.com/401Mid/project).
@@ -63,7 +66,6 @@ PORT: # Port number that you wish to use when running locally
 
 Almost there! You have completed the initial setup of this bot application, leading into deploying and using this bot.
 
----
 
 ## Deployment
 These instructions will over how to deploy it locally utilizing `localhost` and a tunneling library called `ngrok`. In order for you to successfully run this bot locally you will need some way for outside users to access your `localhost` url. `ngrok` Exposes a local webserver to the internet. Please review the official documentation at the link below.
@@ -80,8 +82,28 @@ Set up ngrok to work on your the `PORT` you are running your server on. `Ngrok` 
 - `Event Subscriptions`: Update the Request URL to match your `ngrok` exposed URL.
 - `Slash Commands`: Each slash command will need the request url to match your `ngrok` exposed URL.
 
+You are finally ready to see your bot in action! You can now travel over to your Slack Workspace where you have installed your bot and start using the built-in commands.
 
----
+
+
+## Commands
+These are the currently available slash commands for this bot application. `NOTE:` Ensure you have read through all the installation instructions to make sure you have set up your Slack App to work with these commands.
+
+### Timer
+Info coming soon...
+
+
+### Countdown
+Info coming soon...
+
+
+### DieRoll
+Info coming soon...
+
+
+### CoinFlip
+Info coming soon...
+
 
 ## UML Data Model
 ![some model picture]()
