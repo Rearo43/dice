@@ -88,7 +88,7 @@ You are finally ready to see your bot in action! You can now travel over to your
 
 ## Commands
 These are the currently available slash commands for this bot application.
-- `NOTE:` Ensure you have read through all the installation instructions to make sure you have set up your Slack App to work with these commands.
+- `NOTE:` Ensure you have read through all the [Installation](#installation) instructions to make sure you have set up your Slack App to work with these commands.
 
 ### Timer
 Info coming soon...
@@ -103,8 +103,19 @@ Info coming soon...
 
 
 ### CoinFlip
-Info coming soon...
+- Slash Command:
+    - `/coinflip`
+- Description:
+    - Simulates flipping a two-sided coin. Heads or Tails. The outcome will state the number of coins flipped, and the percentage ratio of the win.
+    - Optional parameter that can be passed in to indicate how many flips to occur.
+- Example: These commands are executed within the Slack Workspace where the bot is installed.
+    ```
+        /coinflip
+        A coin was flipped 1 time and the results were 100.0% HEADS.
 
+        /coinflip 100
+        A coin was flipped 50 times and the results were 56.0% TAILS.
+    ```
 
 ## UML Data Model
 ![some model picture]()
