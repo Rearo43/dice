@@ -1,7 +1,7 @@
 'use strict';
 
 const dotenv = require('dotenv');
-const coinFlip = require('./coinFlip.js');
+const CoinFlipper = require('./src/modules/coinFlip.js');
 
 dotenv.config()
 
@@ -30,12 +30,10 @@ app.message('set timer', async ({ message, say }) => {
 
 // All the room in the world for your code
 app.command('/coinflip', async ({ command, ack, say }) => {
-    // Acknowledge command request
     await ack();
-    let output = coinFlip(command);
-    await say(output);
-
+    await say(CoinFlipper.flip(command));
 });
+
 
 (async () => {
     // Start your app
