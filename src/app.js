@@ -42,7 +42,6 @@ app.command('/gettimer', async({command, ack, say}) => {
 });
 
 app.command('/countdown', async ({ command, ack, say }) => {
-  console.log(command);
   await ack();
   await setCountdown.setCountdown(command, say);
 });
