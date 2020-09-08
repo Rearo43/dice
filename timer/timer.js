@@ -3,26 +3,65 @@ const moment = require('moment'); // require
 
 let timeMap= {};
 
-function setTimer(user, forUser=null){
+async function setTimer(command, say){
     let currentTime = moment();
-    timeMap[user] = {time: currentTime, users:[user, forUser]};
-
-
+    let user;
+    if(command.text.includes('@')){
+        user = command.text.split(' ').filter(word => word.includes('@'))[0];
+        addTomap(currentTime, user, command.user_id);
+        await say(`<${user}>,  <@${command.user_id}> just started timer for you.`);
+      }else{
+          user = command.user_id;
+          addTomap( currentTime, user);
+          await say(`<@${command.user_id}> your timer is set.`);
+      }
 }
 
-function stopTimer(user){
-    if(!timeMap[user]){
-       return false;
+async function stopTimer(command, say){
+    let user;
+    let userName;
+    if(command.text.includes('@')){
+        user = command.text.split(' ').filter(word => word.includes('@'))[0];
+        userName = `<${user}>`;
+    } else {
+        user = command.user_id;
+        userName =`<@${user}>`;
     }
-let timeSpent = getTimer(user);
-    delete timeMap[user];
-    return timeSpent;
+    if(!timeMap[user]){
+        await say(`Timer for ${userName} is not set yet.`);
+    } else {
+        let timeSpent = calculateTime(user);
+        delete timeMap[user];
+        await say(`${userName} spent ${timeSpent}`);
+    }
 }
 
-function getTimer(user){
+async function getTimer(command, say){
+    let user;
+    let userName;
+    if(command.text.includes('@')){
+        user = command.text.split(' ').filter(word => word.includes('@'))[0];
+        userName = `<${user}>`;
+    } else {
+        user = command.user_id;
+        userName =`<@${user}>`;
+    }
     if(!timeMap[user]){
-        return false;
-     }
+        await say(`Timer for ${userName} is not set yet.`);
+    }else{
+        let timeSpent = calculateTime(user);
+        await say(` ${userName}  your current time is ${timeSpent}`);
+    }      
+}
+
+let addTomap = function(currentTime, user, forUser) {
+    timeMap[user] = {time: currentTime, users:[user]};
+    if( forUser){
+        timeMap[user].users.push(forUser);
+    }
+}
+
+function calculateTime(user) {
     let endTime = moment();
     let startTime = timeMap[user].time;
     let totalTime = moment.utc(endTime.diff(startTime)).format("HH:mm:ss").split(':');
