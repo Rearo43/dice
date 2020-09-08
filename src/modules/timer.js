@@ -1,5 +1,5 @@
 'use strict';
-const moment = require('moment'); // require
+const moment = require('moment'); 
 
 
 /**
@@ -57,7 +57,7 @@ async function stopTimer(command, say){
 
 
 /**
-     * getTimer helps get current spent time whout stopping temer 
+     * getTimer helps get current spent time whout stopping timer 
      * @param {object} command An object received from the Slack API
      * @param {SlackCommandMiddlewareArgs} say callback  function to give response back to user
      */
@@ -81,7 +81,7 @@ async function getTimer(command, say){
 }
 
 /**
-     * addTomap hadds to the timeMap object current time, user and second user if timer is setting for someone else
+     * addTomap adds to the timeMap object current time, user and second user if timer is set for someone else
      * @param {moment_Object} current_time capture time stamp
      * @param {string} user user from the object received from the Slack API who is setting timmer
      * @param {string} forUser  user from the object received from the Slack API  for whom timmer was set
