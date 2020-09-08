@@ -1,15 +1,26 @@
 {
   "name": "botbot",
   "version": "3.0.0",
-  "contributors": [{"name": "cas ibrahim"}, {"name": "reagan roberts"}, {"name": "kateryna shydlovska"}, {"name": "joseph zabaleta"}],
+  "contributors": [
+    {
+      "name": "cas ibrahim"
+    },
+    {
+      "name": "reagan roberts"
+    },
+    {
+      "name": "kateryna shydlovska"
+    },
+    {
+      "name": "joseph zabaleta"
+    }
+  ],
   "description": "a helpful bot to automate decisions",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "test": "jest --coverage --verbose",
-    "watch": "jest --watchAll --coverage --verbose",
-    "build": "webpack"
-
+    "watch": "jest --watchAll --coverage --verbose"
   },
   "dependencies": {
     "@slack/bolt": "^1.8.1",
