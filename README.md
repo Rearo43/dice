@@ -87,7 +87,8 @@ You are finally ready to see your bot in action! You can now travel over to your
 
 
 ## Commands
-These are the currently available slash commands for this bot application. `NOTE:` Ensure you have read through all the installation instructions to make sure you have set up your Slack App to work with these commands.
+These are the currently available slash commands for this bot application.
+- `NOTE:` Ensure you have read through all the installation instructions to make sure you have set up your Slack App to work with these commands.
 
 ### Timer
 Info coming soon...
@@ -110,7 +111,14 @@ Info coming soon...
 
 
 ## Approach to Testing
-
+In this application we are utilizing a testing library called `jest`. We have automated unit and integration tests for the current state of this application.
+- `NOTE:` Anything you change / add on this application may or may not break these tests and that is the risk you have to take.
+Currently this application is configured to run the following command
+```bash
+$ npm test
+# OR
+$ npm watch
+```
 
 
 ## Authors
@@ -127,13 +135,14 @@ Info coming soon...
 - none
 
 ## License
-This project is under the MIT License.
+This project is under the [MIT License](./LICENSE).
 
 ## Acknowledgements / Resources
-- none
-
-
-## Local development
-#### start engrock
-./ngrok http 3000
+- [Bolt.js for SlackBots](https://github.com/slackapi/bolt-js)
+- [ngrok documentation](https://ngrok.com/docs)
+- [Ngrok for VSCode Extension](https://marketplace.visualstudio.com/items?itemName=philnash.ngrok-for-vscode)
+- [Project WorkFlow](https://github.com/orgs/401Mid/projects/1)
+- [Slack API](https://api.slack.com/authentication/basics)
+- [Slack Bot Instructions](./slackBotInstructions.md)
+- [Software Requirements](./requirements.md)
 
