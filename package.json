@@ -4,14 +4,18 @@
   "description": "A basic template to spin up a Bolt app for Slack",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "jest"
+    "start": "node index.js"
+    "test": "jest --coverage --verbose",
+    "watch": "jest --watchAll --coverage --verbose",
+    "build": "webpack"
+
   },
   "dependencies": {
     "@slack/bolt": "^1.8.1",
     "dotenv": "^8.2.0",
     "http": "0.0.1-security",
-    "jest": "^26.4.2"
+    "moment": "^2.27.0",
+    "lodash": "^4.17.20"
   },
   "engines": {
     "node": "11.x"
@@ -24,5 +28,8 @@
     "node",
     "glitch",
     "express"
-  ]
+  ],
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
 }
