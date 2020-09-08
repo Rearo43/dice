@@ -56,7 +56,7 @@ async function getTimer(command, say){
 
 let addTomap = function(currentTime, user, forUser) {
   timeMap[user] = {time: currentTime, users:[user]};
-  if( forUser){
+  if(forUser){
     timeMap[user].users.push(forUser);
   }
 };
