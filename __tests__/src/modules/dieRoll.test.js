@@ -18,7 +18,8 @@ it('Should roll a 3', () => {
 
 });
 
-// it('Should run defaults', () => {
-//   expect(dieRoll(3)).toBeGreaterThanOrEqual(1);
-//   expect(dieRoll(3)).toBeLessThan(4);
-// });
+it('Should run defaults', () => {
+  let command = '3 4';
+  expect(dieRoll(command)).toBeGreaterThanOrEqual(1);
+  expect(dieRoll(command)).toBeLessThan(4);
+});
