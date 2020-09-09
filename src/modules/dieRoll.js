@@ -8,18 +8,16 @@ const _ = require('lodash');
  */
 
 function dieRoll(command) {
-  // let userInput = command.text;
-  //CHANGE ALL 'COMMANDS' TO userInput
-  let mid = command.indexOf(' ');
-  console.log(command);
+  let userInput = command.text;
+  let mid = userInput.indexOf(' ');
 
-  if(!command) {
+  if(!userInput) {
     return`The number ${eachRoll()} was rolled.`;
   }
 
   else {
-    let sides = parseInt(command.slice(0, mid));
-    let rolls = parseInt(command.slice(mid, (command.length)));
+    let sides = parseInt(userInput.slice(0, mid));
+    let rolls = parseInt(userInput.slice(mid, (userInput.length)));
     let answerBack = eachRoll(sides, rolls);
 
     return `The average sum of your die rolls is ${answerBack}.`;
