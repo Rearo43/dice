@@ -42,6 +42,7 @@
     "express"
   ],
   "devDependencies": {
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "jsdoc": "^3.6.5"
   }
 }
