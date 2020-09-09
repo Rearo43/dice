@@ -16,12 +16,11 @@
     }
   ],
   "description": "a helpful bot to automate decisions",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "test": "jest --coverage --verbose",
-    "watch": "jest --watchAll --coverage --verbose",
-    "build": "webpack"
+    "watch": "jest --watchAll --coverage --verbose"
   },
   "dependencies": {
     "@slack/bolt": "^1.8.1",
