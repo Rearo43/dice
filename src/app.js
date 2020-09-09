@@ -57,7 +57,7 @@ app.command('/coinflip', async ({ command, ack, say }) => {
 
 app.command('/dieroll', async ({ command, ack, say }) => {
   await ack();
-  await say(dieRoll());
+  await say(dieRoll(command));
 });
 
 
