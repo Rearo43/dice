@@ -31,9 +31,6 @@
     "moment": "^2.27.0",
     "lodash": "^4.17.20"
   },
-  "engines": {
-    "node": "11.x"
-  },
   "repository": {
     "url": "https://github.com/401Mid/project"
   },
