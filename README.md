@@ -166,4 +166,4 @@ This project is under the [MIT License](./LICENSE).
 - [Slack API](https://api.slack.com/authentication/basics)
 - [Slack Bot Instructions](./slackBotInstructions.md)
 - [Software Requirements](./requirements.md)
-
+- [@use JSDocs](https://jsdoc.app/)
