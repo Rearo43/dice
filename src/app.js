@@ -3,8 +3,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-// test
-
 const CoinFlipper = require('./modules/coinFlip.js');
 
 const upTimer = require('./modules/timer.js');
@@ -61,9 +59,12 @@ app.command('/dieroll', async ({ command, ack, say }) => {
 });
 
 
-(async () => {
-  // Start your app
-  await app.start(process.env.PORT || 3000);
-
+async function start(PORT) {
   console.log('⚡️ Bolt app is running!');
-})();
+  await app.start(PORT);
+};
+
+module.exports = {
+    server: app,
+    start: start,
+};

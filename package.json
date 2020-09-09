@@ -16,9 +16,9 @@
     }
   ],
   "description": "a helpful bot to automate decisions",
-  "main": "src/app.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node main.js",
     "test": "jest --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose",
     "build-documentation": "npx jsdoc -d docs -r -R ./README.md ./src/"
@@ -30,9 +30,9 @@
     "moment": "^2.27.0",
     "lodash": "^4.17.20"
   },
-   "engines": {
-       "node": "14.x"
-   },
+  "engines": {
+    "node": "14.x"
+  },
   "repository": {
     "url": "https://github.com/401Mid/project"
   },
@@ -43,6 +43,7 @@
     "express"
   ],
   "devDependencies": {
+    "@code-fellows/supergoose": "^1.0.11",
     "jest": "^26.4.2",
     "jsdoc": "^3.6.5"
   }
