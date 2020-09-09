@@ -11,7 +11,7 @@ const upTimer = require('./modules/timer.js');
 
 const setCountdown = require('./modules/countdown.js');
 
-const dieRoll = require('./modules/dieRoll.js');
+const { dieRoll } = require('./modules/dieRoll.js');
 
 
 const { App } = require('@slack/bolt');
