@@ -1,6 +1,7 @@
 'use strict';
 
 const randomSpy = jest.spyOn(Math, 'random');
+const dieRoll = require('../../../src/modules//dieRoll.js');
 
 afterAll(() => {
   randomSpy.mockRestore();
