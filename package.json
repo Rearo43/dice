@@ -21,7 +21,7 @@
     "start": "node src/app.js",
     "test": "jest --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose",
-    "build": "npm start",
+    "build": "webpack",
     "build-documentation": "npx jsdoc -d docs -r -R ./README.md ./src/"
   },
   "dependencies": {
