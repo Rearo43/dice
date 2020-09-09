@@ -20,7 +20,8 @@
   "scripts": {
     "start": "node src/app.js",
     "test": "jest --coverage --verbose",
-    "watch": "jest --watchAll --coverage --verbose"
+    "watch": "jest --watchAll --coverage --verbose",
+    "build-documentation": "npx jsdoc -d public -r -R ./README.md ./src/"
   },
   "dependencies": {
     "@slack/bolt": "^1.8.1",

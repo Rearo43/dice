@@ -14,6 +14,7 @@
         - [CoinFlip](#coinflip)
     - [UML Data Model](#uml-data-model)
     - [Approach to Testing](#approach-to-testing)
+    - [JSDocs](#jsdocs)
     - [Authors](#authors)
     - [Collaborations](#collaborations)
     - [License](#license)
@@ -131,6 +132,15 @@ $ npm test
 $ npm watch
 ```
 
+
+## JSDocs
+Throughout our project we have utilized Docstrings and are using a third party library called `JSDocs`. This library will produce an browsable HTML file, that contains all the functions, classes, and methods that this application has to offer. To get these files you can execute the following script.
+
+```bash
+$ npm run build-documentation
+```
+
+This will create a `./public` folder within the root of the project. Inside you will find all the created HTML files from this project. You can now launch `index.html` from your favorite browser!
 
 ## Authors
 - Software Developer: Cas Ibrahim

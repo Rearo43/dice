@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>PROJECT NAME</h1>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#project-name">Project Name</a>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#project-management-board">Project Management Board</a></li>
+<li><a href="#software-requirements">Software Requirements</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#deployment">Deployment</a></li>
+<li><a href="#commands">Commands</a>
+<ul>
+<li><a href="#timer">Timer</a></li>
+<li><a href="#countdown">Countdown</a></li>
+<li><a href="#dieroll">DieRoll</a></li>
+<li><a href="#coinflip">CoinFlip</a></li>
+</ul>
+</li>
+<li><a href="#uml-data-model">UML Data Model</a></li>
+<li><a href="#approach-to-testing">Approach to Testing</a></li>
+<li><a href="#authors">Authors</a></li>
+<li><a href="#collaborations">Collaborations</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#acknowledgements-/-resources">Acknowledgements / Resources</a></li>
+</ul>
+</li>
+</ul>
+<h2>Overview</h2>
+<h2>Project Management Board</h2>
+<p>This project utilizes GitHub Workflow / Projects boards. You can visit this board and see agile practices in action by clicking the link below.
+<a href="https://github.com/orgs/401Mid/projects/1">Workflow Board</a></p>
+<h2>Software Requirements</h2>
+<p>Please visit this link to view the <a href="./requirements.md">Software Requirements</a></p>
+<h2>Installation</h2>
+<p>First clone down a copy of the repository from here <a href="https://github.com/401Mid/project">Repo Link</a>.</p>
+<pre class="prettyprint source lang-bash"><code>$ git clone https://github.com/401Mid/project/
+</code></pre>
+<p>Next move into project directory and install all required dependencies.</p>
+<pre class="prettyprint source lang-bash"><code>$ cd project/
+$ npm install
+</code></pre>
+<p>Before we can get to running this application locally, you will need to create yourself a classic Slack Bot and assign it to your workspace. Please refer to the Slack API Documentation.</p>
+<ul>
+<li><a href="https://api.slack.com/authentication/basics">Slack API</a></li>
+</ul>
+<p>To see follow the steps we used to set up this bot checkout these set up instructions. This will go over creating a slack app, setting up initial scope, enabling listening events, and adding the appropriate slash commands required to run this project.</p>
+<ul>
+<li><a href="./slackBotInstructions.md">BotBot Setup Instructions</a></li>
+</ul>
+<p>Once you have completed the initial creation of your slack app, we can move into assigning some environment variables. In this project we use <code>dotenv</code> library to hold these values. Start off by creating this file.</p>
+<pre class="prettyprint source lang-bash"><code>$ touch .env # Note the . before env as this is a hidden file
+</code></pre>
+<p>After it is created you will need to add the following key value pairs</p>
+<pre class="prettyprint source lang-bash"><code>BOT_USER_TOKEN: # This is the Bot User OAuth token provided to you after creating a new Slack App
+SLACK_SIGNING_SECRET: # Slack Signing Secret provided to you after creating a new Slack App
+PORT: # Port number that you wish to use when running locally
+</code></pre>
+<p>Almost there! You have completed the initial setup of this bot application, leading into deploying and using this bot.</p>
+<h2>Deployment</h2>
+<p>These instructions will over how to deploy it locally utilizing <code>localhost</code> and a tunneling library called <code>ngrok</code>. In order for you to successfully run this bot locally you will need some way for outside users to access your <code>localhost</code> url. <code>ngrok</code> Exposes a local webserver to the internet. Please review the official documentation at the link below.</p>
+<ul>
+<li><a href="https://ngrok.com/docs">ngrok Documentation</a></li>
+</ul>
+<p>VSCode has several extensions that utilize ngrok and are quite intuitive. Our team used the following extension.</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=philnash.ngrok-for-vscode">ngrok for VSCode</a> by philnash</li>
+</ul>
+<p>Once you have set up ngrok to work with you, we can finally launch the bot! Lets start the application locally</p>
+<pre class="prettyprint source lang-bash"><code>$ npm start # Run from the root of your file
+</code></pre>
+<p>Set up ngrok to work on your the <code>PORT</code> you are running your server on. <code>Ngrok</code> will provide you an exposed web URL for use to hit your server. This URL will need to be added to your Slack App. There are two places this will need to be added:</p>
+<ul>
+<li><code>Event Subscriptions</code>: Update the Request URL to match your <code>ngrok</code> exposed URL.</li>
+<li><code>Slash Commands</code>: Each slash command will need the request url to match your <code>ngrok</code> exposed URL.</li>
+</ul>
+<p>You are finally ready to see your bot in action! You can now travel over to your Slack Workspace where you have installed your bot and start using the built-in commands.</p>
+<h2>Commands</h2>
+<p>These are the currently available slash commands for this bot application.</p>
+<ul>
+<li><code>NOTE:</code> Ensure you have read through all the <a href="#installation">Installation</a> instructions to make sure you have set up your Slack App to work with these commands.</li>
+</ul>
+<h3>Timer</h3>
+<p>Info coming soon...</p>
+<h3>Countdown</h3>
+<p>Info coming soon...</p>
+<h3>DieRoll</h3>
+<p>Info coming soon...</p>
+<h3>CoinFlip</h3>
+<ul>
+<li>Slash Command:
+<ul>
+<li><code>/coinflip</code></li>
+</ul>
+</li>
+<li>Description:
+<ul>
+<li>Simulates flipping a two-sided coin. Heads or Tails. The outcome will state the number of coins flipped, and the percentage ratio of the win.</li>
+<li>Optional parameter that can be passed in to indicate how many flips to occur.</li>
+</ul>
+</li>
+<li>Example: These commands are executed within the Slack Workspace where the bot is installed.<pre class="prettyprint source"><code>    /coinflip
+    A coin was flipped 1 time and the results were 100.0% HEADS.
+
+    /coinflip 100
+    A coin was flipped 50 times and the results were 56.0% TAILS.
+</code></pre>
+</li>
+</ul>
+<h2>UML Data Model</h2>
+<p><img src="./assets/uml.png" alt="UML"></p>
+<h2>Approach to Testing</h2>
+<p>In this application we are utilizing a testing library called <code>jest</code>. We have automated unit and integration tests for the current state of this application.</p>
+<ul>
+<li><code>NOTE:</code> Anything you change / add on this application may or may not break these tests and that is the risk you have to take.
+Currently this application is configured to run the following command</li>
+</ul>
+<pre class="prettyprint source lang-bash"><code>$ npm test
+# OR
+$ npm watch
+</code></pre>
+<h2>Authors</h2>
+<ul>
+<li>Software Developer: Cas Ibrahim
+<ul>
+<li><a href="https://github.com/mamacas">Official Github</a></li>
+</ul>
+</li>
+<li>Software Developer: Kateryna Shydlovska
+<ul>
+<li><a href="https://github.com/KaterynaShydlovska">Official Github</a></li>
+</ul>
+</li>
+<li>Software Developer: Joseph Zabaleta
+<ul>
+<li><a href="https://github.com/joseph-zabaleta">Official Github</a></li>
+</ul>
+</li>
+<li>Software Developer: Reagan Roberts
+<ul>
+<li><a href="https://github.com/Rearo43">Official Github</a></li>
+</ul>
+</li>
+</ul>
+<h2>Collaborations</h2>
+<ul>
+<li>none</li>
+</ul>
+<h2>License</h2>
+<p>This project is under the <a href="./LICENSE">MIT License</a>.</p>
+<h2>Acknowledgements / Resources</h2>
+<ul>
+<li><a href="https://github.com/slackapi/bolt-js">Bolt.js for SlackBots</a></li>
+<li><a href="https://ngrok.com/docs">ngrok documentation</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=philnash.ngrok-for-vscode">Ngrok for VSCode Extension</a></li>
+<li><a href="https://github.com/orgs/401Mid/projects/1">Project WorkFlow</a></li>
+<li><a href="https://api.slack.com/authentication/basics">Slack API</a></li>
+<li><a href="./slackBotInstructions.md">Slack Bot Instructions</a></li>
+<li><a href="./requirements.md">Software Requirements</a></li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CoinFlipper.html">CoinFlipper</a></li><li><a href="Helper.html">Helper</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Tue Sep 08 2020 18:41:05 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
