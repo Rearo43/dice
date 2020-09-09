@@ -77,7 +77,7 @@ describe('setCountdown Function Timers', () => {
 
   it('should notify user a timer is being set if input is valid', () => {
     countdown(command, say);
-    expect(say).toHaveBeenLastCalledWith(`Setting timer for ${command.text} for <@${command.user_id}>.`);
+    expect(say).toHaveBeenLastCalledWith(`Setting countdown for ${command.text} for <@${command.user_id}>.`);
   });
 
   it('should prompt the user to try again if their input was invalid', () => {
@@ -98,7 +98,7 @@ describe('setCountdown Function Timers', () => {
 
     jest.advanceTimersByTime(4000);
 
-    expect(say).toHaveBeenLastCalledWith(`Setting timer for ${command.text} for <@${command.user_id}>.`);
+    expect(say).toHaveBeenLastCalledWith(`Setting countdown for ${command.text} for <@${command.user_id}>.`);
   });
 
 });
