@@ -118,7 +118,7 @@ Info coming soon...
     ```
 
 ## UML Data Model
-![some model picture]()
+![UML](./assets/uml.png)
 
 
 ## Approach to Testing
