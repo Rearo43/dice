@@ -16,12 +16,12 @@
     }
   ],
   "description": "a helpful bot to automate decisions",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "test": "jest --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose",
-    "build": "webpack"
+    "build-documentation": "npx jsdoc -d docs -r -R ./README.md ./src/"
   },
   "dependencies": {
     "@slack/bolt": "^1.8.1",
@@ -43,6 +43,7 @@
     "express"
   ],
   "devDependencies": {
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "jsdoc": "^3.6.5"
   }
 }

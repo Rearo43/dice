@@ -1,50 +1,85 @@
 'use strict';
-const moment = require('moment'); // require
+const moment = require('moment'); 
+
+
+/**
+ * timeMap object to store user
+ */
 
 let timeMap= {};
+
+
+    /**
+     * setTimer helps set timer for user using moment library
+     * @param {object} command An object received from the Slack API
+     * @param {SlackCommandMiddlewareArgs} say callback  function to give response back to user
+     */
 
 async function setTimer(command, say){
   let currentTime = moment();
   let user;
   if(command.text.includes('@')){
-    user = command.text.split(' ').filter(word => word.includes('@'))[0];
-    addTomap(currentTime, user, command.user_id);
-    await say(`<${user}>,  <@${command.user_id}> just started timer for you.`);
+    user = command.text.split(' ').filter(word => word.includes('@'))[0].replace("@", '');
+    addTomap(currentTime, user, command.user_name);
+    console.log( user, command.user_name)
+    await say(`<@${user}>,  <@${command.user_name}> just started timer for you.`);
   }else{
-    user = command.user_id;
+    user = command.user_name;
     addTomap( currentTime, user);
-    await say(`<@${command.user_id}> your timer is set.`);
+    await say(`<@${command.user_name}> your timer is set.`);
   }
 }
+
+
+/**
+     * stopTimer helps stop timer and get response with time user spent
+     * @param {object} command An object received from the Slack API
+     * @param {SlackCommandMiddlewareArgs} say callback  function to give response back to user
+     */
 
 async function stopTimer(command, say){
   let user;
   let userName;
+  let forAnotherUser = false;
   if(command.text.includes('@')){
-    user = command.text.split(' ').filter(word => word.includes('@'))[0];
-    userName = `<${user}>`;
+    user = command.text.split(' ').filter(word => word.includes('@'))[0].replace("@", '');
+    userName = `<@${user}>`;
+    forAnotherUser = true;
   } else {
-    user = command.user_id;
+    user = command.user_name;
     userName =`<@${user}>`;
   }
   if(!timeMap[user]){
     await say(`Timer for ${userName} is not set yet.`);
   } else {
-    let timeSpent = calculateTime(user);
-    delete timeMap[user];
-    await say(`${userName} spent ${timeSpent}`);
+    if(forAnotherUser && !timeMap[user].users.includes(command.user_name)) {
+      say(`Sorry <@${command.user_name}> you cannot perform this operation`);
+    }else{
+      let timeSpent = calculateTime(user);
+      delete timeMap[user];
+      await say(`${userName} spent ${timeSpent}`);
+    }
   }
 }
+
+
+/**
+     * getTimer helps get current spent time whout stopping timer 
+     * @param {object} command An object received from the Slack API
+     * @param {SlackCommandMiddlewareArgs} say callback  function to give response back to user
+     */
 
 async function getTimer(command, say){
   let user;
   let userName;
   if(command.text.includes('@')){
-    user = command.text.split(' ').filter(word => word.includes('@'))[0];
-    userName = `<${user}>`;
+    user = command.text.split(' ').filter(word => word.includes('@'))[0].replace('@', '');
+    userName = `<@${user}>`;
+    console.log(user, userName , 'if')
   } else {
-    user = command.user_id;
+    user = command.user_name;
     userName =`<@${user}>`;
+    console.log(user, userName, 'else')
   }
   if(!timeMap[user]){
     await say(`Timer for ${userName} is not set yet.`);
@@ -54,12 +89,24 @@ async function getTimer(command, say){
   }      
 }
 
+/**
+     * addTomap adds to the timeMap object current time, user and second user if timer is set for someone else
+     * @param {moment_Object} current_time capture time stamp
+     * @param {string} user user from the object received from the Slack API who is setting timmer
+     * @param {string} forUser  user from the object received from the Slack API  for whom timmer was set
+     */
+
 let addTomap = function(currentTime, user, forUser) {
   timeMap[user] = {time: currentTime, users:[user]};
-  if( forUser){
+  if(forUser){
     timeMap[user].users.push(forUser);
   }
 };
+
+/**
+     * calculateTime helps to calculate difference beetween time when timer was set and time when timer was stoped
+     * @param {string} user user name received from the Slack API who is setting timmer
+     */
 
 function calculateTime(user) {
   let endTime = moment();
