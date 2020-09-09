@@ -1,25 +1,27 @@
 'use strict';
 
-const randomSpy = jest.spyOn(Math, 'random');
-const { dieRoll } = require('../../../src/modules//dieRoll.js');
-const { eachRoll } = require('../../../src/modules//dieRoll.js');
+const _ = require('lodash');
+jest.mock('lodash');
 
-afterAll(() => {
-  randomSpy.mockRestore();
-});
+const { dieRoll, eachRoll } = require('../../../src/modules//dieRoll.js');
 
 it('Should run helper function with default values', () => {
+  _.random.mockImplementation(() => 3);
+
   expect(eachRoll()).toBeGreaterThanOrEqual(1);
   expect(eachRoll()).toBeLessThan(7);
 });
 
-it('Should roll a 3', () => {
-  randomSpy.mockImplementation(() => 3);
+it('Should run with user input', () => {
+  _.random.mockImplementation(() => 2);
 
+  expect(dieRoll('')).toEqual('The number 2 was rolled.');
 });
 
-it('Should run defaults', () => {
-  let command = '3 4';
-  expect(dieRoll(command)).toBeGreaterThanOrEqual(1);
-  expect(dieRoll(command)).toBeLessThan(4);
+it('Should run with user input', () => {
+  _.random.mockImplementation(() => 3);
+
+  let userInput = '5 4';
+  
+  expect(dieRoll(userInput)).toMatch('The average sum of your die rolls is 3.');
 });
