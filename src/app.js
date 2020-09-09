@@ -3,6 +3,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+// test
 
 const CoinFlipper = require('./modules/coinFlip.js');
 
@@ -31,7 +32,7 @@ app.message('Hello', async ({ message, say }) => {
 
 app.command('/settimer', async ({  command, ack, say}) => {
   await ack();
-  upTimer.setTimer(command,say); 
+  upTimer.setTimer(command,say);
 });
 
 app.command('/stoptimer', async({command, ack, say}) => {
