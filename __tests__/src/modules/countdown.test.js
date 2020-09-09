@@ -82,7 +82,7 @@ describe('setCountdown Function Timers', () => {
 
   it('should prompt the user to try again if their input was invalid', () => {
     countdown(failcommand, say);
-    expect(say).toHaveBeenLastCalledWith('Oops! Try again, and please use HH:MM:SS format. For example: 00:30:00 will set a countdown for 30 minutes.');
+    expect(say).toHaveBeenLastCalledWith(`Oops! It looks like you are trying to set a countdown, <@${command.user_id}>Try again, and please use HH:MM:SS format. For example: 00:30:00 will set a countdown for 30 minutes.`);
   });
 
   it('should notify a user their time is up after the appropriate time has passed', () => {
