@@ -19,6 +19,7 @@ const app = new App({
 });
 
 
+
 // Listens to incoming messages that contain "hello"
 app.message('Hello', async ({ message, say }) => {
   // say() sends a message to the channel where the event was triggered
@@ -41,13 +42,11 @@ app.command('/gettimer', async({command, ack, say}) => {
   upTimer.getTimer(command, say);
 });
 
-app.command('/countdown', async ({ message, ack, say }) => {
+app.command('/countdown', async ({ command, ack, say }) => {
   await ack();
-  let output = setCountdown(message.text);
-  await say(output);
+  await setCountdown.setCountdown(command, say);
 });
 
-// All the room in the world for your code
 app.command('/coinflip', async ({ command, ack, say }) => {
   await ack();
   await say(CoinFlipper.flip(command));
