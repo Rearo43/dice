@@ -96,7 +96,39 @@ Info coming soon...
 
 
 ### Countdown
-Info coming soon...
+- Slash Command:
+    - `/countdown`
+- Description:
+    - Prompts the user to enter the time they would like to set a countdown for, in HH:MM:SS format. 
+    - HH:MM:SS is converted to milliseconds behind the scenes and the Bot will alert the user when their input time ahas elapsed
+    - If the user inputs an invalid time, the Bot will prompt the user to try again and remind the user of the format needed. 
+        - Valid Input Examples:
+        ```
+        User: /countdown 00:01:30
+
+        Bot: Setting countdown for 00:01:30 for [@username].
+
+        ---after 1 minute, 30 seconds passes---
+
+        Bot: [@username], your 00:01:30 is up!
+        ```
+        - Invalid Input Examples:
+        ```
+        User: /countdown 0:0:03
+        // missing zeroes 
+        
+        User: /countdown 00:60:00 
+        // 60 minutes or seconds should be rounded 
+        up to 01 hour or 01 minute respectively
+        
+        User: /countdown 00:30
+        // missing HH or MM or SS
+
+        Bot: Oops! It looks like you are trying to set a countdown, [@username].
+        Try again, and please use HH:MM:SS format. 
+        For example: 00:30:00 will set a countdown for 30 minutes.
+        ```
+    
 
 
 ### DieRoll
