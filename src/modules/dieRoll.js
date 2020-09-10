@@ -21,7 +21,7 @@ function dieRoll(command) {
     let rolls = parseInt(userInput.slice(mid, (userInput.length)));
     let answerBack = eachRoll(sides, rolls);
 
-    return `After ${rolls} rolls, the average of the dice rolled was :die-${answerBack}:`;
+    return `After ${rolls} rolls, the average of the dice rolled was... :die-${answerBack}:`;
     // return `The average sum of your die rolls is ${answerBack}.`;
   }
 }
