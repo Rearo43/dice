@@ -1,6 +1,6 @@
 {
-  "name": "botbot",
-  "version": "4.0.0",
+  "name": "roberto",
+  "version": "4.1.0",
   "contributors": [
     {
       "name": "cas ibrahim"
@@ -26,13 +26,12 @@
   "dependencies": {
     "@slack/bolt": "^1.8.1",
     "dotenv": "^8.2.0",
-    "http": "0.0.1-security",
-    "moment": "^2.27.0",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "moment": "^2.27.0"
   },
-   "engines": {
-       "node": "14.x"
-   },
+  "engines": {
+    "node": "14.x"
+  },
   "repository": {
     "url": "https://github.com/401Mid/project"
   },

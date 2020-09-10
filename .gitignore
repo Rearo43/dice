@@ -5,6 +5,7 @@ temp
 build
 .idea
 package-lock.json
+.vscode
 
 # Created by https://www.gitignore.io/api/vim,osx,node,linux,windows
 ### Linux ###
