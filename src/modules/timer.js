@@ -21,7 +21,7 @@ async function setTimer(command, say){
   if(command.text.includes('@')){
     user = command.text.split(' ').filter(word => word.includes('@'))[0].replace("@", '');
     addTomap(currentTime, user, command.user_name);
-    console.log( user, command.user_name)
+    // console.log( user, command.user_name)
     await say(`<@${user}>,  <@${command.user_name}> just started timer for you.`);
   }else{
     user = command.user_name;
@@ -75,11 +75,11 @@ async function getTimer(command, say){
   if(command.text.includes('@')){
     user = command.text.split(' ').filter(word => word.includes('@'))[0].replace('@', '');
     userName = `<@${user}>`;
-    console.log(user, userName , 'if')
+    // console.log(user, userName , 'if')
   } else {
     user = command.user_name;
     userName =`<@${user}>`;
-    console.log(user, userName, 'else')
+    // console.log(user, userName, 'else')
   }
   if(!timeMap[user]){
     await say(`Timer for ${userName} is not set yet.`);

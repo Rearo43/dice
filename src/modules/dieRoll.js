@@ -7,6 +7,8 @@ const _ = require('lodash');
  * @param {Object} command - object created when users post chats.
  */
 
+//user input '/dieroll two 3' <- want to change input to roll two die instead of choose sides
+
 function dieRoll(command) {
   let userInput = command.text;
   let mid = userInput.indexOf(' ');
@@ -15,6 +17,8 @@ function dieRoll(command) {
     return `:die-${eachRoll()}:`;
     // return`The number ${eachRoll()} was rolled.`;
   }
+
+  // if()
 
   else {
     let sides = parseInt(userInput.slice(0, mid));

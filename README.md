@@ -100,7 +100,19 @@ Info coming soon...
 
 
 ### DieRoll
-Info coming soon...
+- Slash Command:
+    - `/dieroll`
+- Description:
+    - Simulates rolling a six die. The default functionality is rolling a six sided die once. The outcome is visualized by a die emoji.
+    - Optional parameter include changing the number of sides a die has and the number of times the die is rolled.
+- Example: These commands are executed within the Slack Workspace where the bot is installed.
+    ```
+        '/dieroll'
+        The default die has possible outcomes between 1 and 6. This die is rolled once. The outcome is the value of the single number rolled.
+
+        '/dieroll 8 10'
+        The die now has possible outcomes between 1 and 8. This die is rolled 10 times. The outcome is the average of all rolls.
+    ```
 
 
 ### CoinFlip
