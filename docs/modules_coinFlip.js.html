@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modules/coinFlip.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modules/coinFlip.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+const _ = require('lodash');
+
+/**
+ * Coin Flipper Class to manage and handle the coin flipping logic
+ * @class
+ */
+class CoinFlipper {
+
+    static HEADS = 'heads';
+    static TAILS = 'tails';
+    static TIED = 'tied';
+
+
+    /**
+     * Flip executes all helper functions required to determine an outcome of flipping a coin
+     * @param {object} command An object received from the Slack API
+     * @static
+     */
+    static flip(command) {
+
+        let body = {
+            channel_name: command.channel_name,
+            user_id: command.user_id,
+            text: command.text,
+            times: 1,
+            heads: 0,
+            tails: 0,
+            winner: '',
+            percentage: 0,
+        };
+
+        if (body.text) {
+
+            body.times = parseInt(body.text);
+
+            if (!_.isFinite(body.times)) {
+                return `/coinflip received an invalid parameter of "${body.text}". Please ensure the parameter is a number.`;
+            };
+
+        };
+
+        this._executeFlips(body);
+        this._calculateFlipResults(body);
+        return this._createMessage(body);
+
+    };
+
+
+    /**
+     * Updates parameters on the body object based on the results of the _executeFlips() method
+     * @param {object} body Object passed from flip method containing all necessary properties for this flip iteration.
+     */
+    static _executeFlips(body) {
+
+        for (let i = 0; i &lt; body.times; i++) {
+            _.random(0, 1, true) > 0.50 ? body.heads++ : body.tails++;
+        };
+
+    };
+
+
+    /**
+     * Updates parameters on the body object based on the results of the _executeFlips() method
+     * @param {object} body Object passed from flip method containing all necessary properties for this flip iteration.
+     * @static
+     */
+    static _calculateFlipResults(body) {
+
+        if (body.heads > body.tails) {
+            body.winner = this.HEADS;
+            body.percentage = ((body[body.winner] / body.times) * 100).toFixed(1);
+        } else if (body.heads &lt; body.tails) {
+            body.winner = this.TAILS;
+            body.percentage = ((body[body.winner] / body.times) * 100).toFixed(1);
+        } else {
+            body.winner = this.TIED;
+        };
+
+
+    };
+
+
+    /**
+     * After the body is built, _createMessage will produce a message and return it to the user.
+     * @param {object} body Object passed from flip method containing all necessary properties for this flip iteration.
+     * @static
+     * @returns {string} Returns a string message for the
+     */
+    static _createMessage(body) {
+
+        let plural = body.times == 1 ? 'time' : 'times';
+        let user = '';
+
+        if (body.channel_name !== 'directmessage') {
+            user = `by &lt;@${body.user_id}> `;
+        } else {
+            user = '';
+        };
+
+        if (body.winner === this.TIED) {
+            return `A coin was flipped ${user}${body.times} ${plural} and the outcome was a tie!`
+        } else {
+            return `A coin was flipped ${user}${body.times} ${plural} and the outcome was ${body.percentage}% ${body.winner.toUpperCase()}`;
+        };
+
+    };
+
+}
+
+
+module.exports = CoinFlipper;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CoinFlipper.html">CoinFlipper</a></li><li><a href="Helper.html">Helper</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addTomap">addTomap</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#convertHMSactsasahelperfunctiontoconvertHH:MM:SStimeformattomillisecondssothatitworkswithsetTimeoutinsetCountdown">convertHMS acts as a helper function to convert HH:MM:SS time format to milliseconds so that it works with setTimeout in setCountdown</a></li><li><a href="global.html#dieRoll">dieRoll</a></li><li><a href="global.html#eachRoll">eachRoll</a></li><li><a href="global.html#getTimer">getTimer</a></li><li><a href="global.html#millis">millis</a></li><li><a href="global.html#regx">regx</a></li><li><a href="global.html#setCountdownrespondstoSlashCommand'/countdown'whenavalidtimeinputinHH:MM:SSformatfollowsthecommand">setCountdown responds to Slash Command '/countdown' when a valid time input in HH:MM:SS format follows the command</a></li><li><a href="global.html#setTimer">setTimer</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timeMap">timeMap</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Wed Sep 09 2020 09:37:52 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
