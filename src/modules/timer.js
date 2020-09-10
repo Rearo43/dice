@@ -29,8 +29,8 @@ async function setTimer(command, say) {
 
 /**
  * stopTimer helps stop timer and get response with time user spent.
- * @param {object} command an object received from the Slack API
- * @param {SlackCommandMiddlewareArgs} say callback function to give response to user
+ * @param {object} command an object received from the Slack API.
+ * @param {SlackCommandMiddlewareArgs} say callback function to give response to user.
  */
 async function stopTimer(command, say) {
     let user;
@@ -59,9 +59,9 @@ async function stopTimer(command, say) {
 
 
 /**
- * getTimer helps get current spent time whout stopping timer
- * @param {object} command An object received from the Slack API
- * @param {SlackCommandMiddlewareArgs} say callback function to give response to user
+ * getTimer helps get current spent time whout stopping timer.
+ * @param {object} command an object received from the Slack API.
+ * @param {SlackCommandMiddlewareArgs} say callback function to give response to user.
  */
 async function getTimer(command, say) {
     let user;
