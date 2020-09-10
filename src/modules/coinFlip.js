@@ -3,7 +3,7 @@
 const _ = require('lodash');
 
 /**
- * Coin Flipper Class to manage and handle the coin flipping logic
+ * Coin Flipper Class to manage and handle the coin flipping logic.
  * @class
  */
 class CoinFlipper {
@@ -14,9 +14,10 @@ class CoinFlipper {
 
 
     /**
-     * Flip executes all helper functions required to determine an outcome of flipping a coin
-     * @param {object} command An object received from the Slack API
+     * Flip executes all helper functions required to determine an outcome of flipping a coin.
+     * @param {object} command An object received from the Slack API.
      * @static
+     * @returns {string} Message created after all flipping is complete in string format.
      */
     static flip(command) {
 
@@ -49,7 +50,7 @@ class CoinFlipper {
 
 
     /**
-     * Updates parameters on the body object based on the results of the _executeFlips() method
+     * Updates parameters on the body object based on the results of the _executeFlips() method.
      * @param {object} body Object passed from flip method containing all necessary properties for this flip iteration.
      */
     static _executeFlips(body) {
@@ -62,7 +63,7 @@ class CoinFlipper {
 
 
     /**
-     * Updates parameters on the body object based on the results of the _executeFlips() method
+     * Updates parameters on the body object based on the results of the _executeFlips() method.
      * @param {object} body Object passed from flip method containing all necessary properties for this flip iteration.
      * @static
      */
@@ -86,7 +87,7 @@ class CoinFlipper {
      * After the body is built, _createMessage will produce a message and return it to the user.
      * @param {object} body Object passed from flip method containing all necessary properties for this flip iteration.
      * @static
-     * @returns {string} Returns a string message for the
+     * @returns {string} Returns a string message.
      */
     static _createMessage(body) {
 

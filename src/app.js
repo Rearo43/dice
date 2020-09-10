@@ -3,14 +3,9 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-// test
-
 const CoinFlipper = require('./modules/coinFlip.js');
-
 const upTimer = require('./modules/timer.js');
-
 const setCountdown = require('./modules/countdown.js');
-
 const { dieRoll } = require('./modules/dieRoll.js');
 
 
@@ -22,12 +17,9 @@ const app = new App({
 });
 
 
-
-// Listens to incoming messages that contain "hello"
-app.message('Hello', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
-  console.log(message);
-  await say(`Hey there <@${message.user}>!`);
+app.command('/sayhello', async ({ command, ack, say }) => {
+  await ack();
+  await say(`Hey there <@${command.user_id}>!`);
 });
 
 app.command('/settimer', async ({  command, ack, say}) => {
@@ -62,7 +54,6 @@ app.command('/dieroll', async ({ command, ack, say }) => {
 
 
 (async () => {
-  // Start your app
   await app.start(process.env.PORT || 3000);
 
   console.log('⚡️ Bolt app is running!');
