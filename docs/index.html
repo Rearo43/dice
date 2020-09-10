@@ -43,10 +43,10 @@
 
 
     <section>
-        <article><h1>PROJECT NAME</h1>
+        <article><h1>Roberto the SlackBot</h1>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#project-name">Project Name</a>
+<li><a href="#roberto-the-slackbot">Roberto the SlackBot</a>
 <ul>
 <li><a href="#overview">Overview</a></li>
 <li><a href="#project-management-board">Project Management Board</a></li>
@@ -126,11 +126,122 @@ PORT: # Port number that you wish to use when running locally
 <li><code>NOTE:</code> Ensure you have read through all the <a href="#installation">Installation</a> instructions to make sure you have set up your Slack App to work with these commands.</li>
 </ul>
 <h3>Timer</h3>
-<p>Info coming soon...</p>
+<ul>
+<li>Slash Command:
+<ul>
+<li><code>/settimer</code></li>
+</ul>
+</li>
+<li>Description:
+<ul>
+<li>Set timer - helps to count time, the time starts count from the moment when user set it. Also user can set timer for someome else.</li>
+<li>Optional parameter can be @username if user wants to set timer for another user.</li>
+</ul>
+</li>
+<li>Example: These commands are executed within the Slack Workspace where the bot is installed.<pre class="prettyprint source"><code>     /settimer
+     @kshydlovska  your timer is set.
+     @someone,  @kshydlovska just started timer for you.
+</code></pre>
+</li>
+<li>Slash Command:
+<ul>
+<li><code>/gettimer</code></li>
+</ul>
+</li>
+<li>Description:
+<ul>
+<li>Get timer - helps get current spent time whout stopping timer. Also any user can get current time for themself or someome else.</li>
+<li>Optional parameter can be @username if user wants to get timer for another user.</li>
+</ul>
+</li>
+<li>Example: These commands are executed within the Slack Workspace where the bot is installed.<pre class="prettyprint source"><code>     /gettimer
+     @kshydlovska your current time is.
+     @someone, your current time is.
+</code></pre>
+</li>
+<li>Slash Command:
+<ul>
+<li><code>/stoptimer</code></li>
+</ul>
+</li>
+<li>Description:
+<ul>
+<li>Stop timer - stops timer and send response with time user spent</li>
+<li>Optional parameter can be @username if user wants to stop timer for another user, but user can stop timer for another user ony if he set it. In case if user set timer for themself nobody else can't stop it.</li>
+</ul>
+</li>
+<li>Example: These commands are executed within the Slack Workspace where the bot is installed.<pre class="prettyprint source"><code>     /stoptimer
+     @kshydlovska spent (and actualy time spent).
+     @someone spent (and actualy time spent).
+     Sorry @kshyd you cannot perform this operation.
+</code></pre>
+</li>
+</ul>
 <h3>Countdown</h3>
-<p>Info coming soon...</p>
+<ul>
+<li>Slash Command:
+<ul>
+<li><code>/countdown</code></li>
+</ul>
+</li>
+<li>Description:
+<ul>
+<li>Prompts the user to enter the time they would like to set a countdown for, in HH:MM:SS format.</li>
+<li>HH:MM:SS is converted to milliseconds behind the scenes and the Bot will alert the user when their input time ahas elapsed</li>
+<li>If the user inputs an invalid time, the Bot will prompt the user to try again and remind the user of the format needed.
+<ul>
+<li>Valid Input Examples:</li>
+</ul>
+<pre class="prettyprint source"><code>User: /countdown 00:01:30
+
+Bot: Setting countdown for 00:01:30 for [@username].
+
+---after 1 minute, 30 seconds passes---
+
+Bot: [@username], your 00:01:30 is up!
+</code></pre>
+<ul>
+<li>Invalid Input Examples:</li>
+</ul>
+<pre class="prettyprint source"><code>User: /countdown 0:0:03
+// missing zeroes
+
+User: /countdown 00:60:00
+// 60 minutes or seconds should be rounded
+up to 01 hour or 01 minute respectively
+
+User: /countdown 00:30
+// missing HH or MM or SS
+
+Bot: Oops! It looks like you are trying to set a countdown, [@username].
+Try again, and please use HH:MM:SS format.
+For example: 00:30:00 will set a countdown for 30 minutes.
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
 <h3>DieRoll</h3>
-<p>Info coming soon...</p>
+<ul>
+<li>Slash Command:
+<ul>
+<li><code>/dieroll</code></li>
+</ul>
+</li>
+<li>Description:
+<ul>
+<li>Simulates rolling a six die. The default functionality is rolling a six sided die once. The outcome is visualized by a die emoji.</li>
+<li>Optional parameter include changing the number of sides a die has and the number of times the die is rolled.</li>
+</ul>
+</li>
+<li>Example: These commands are executed within the Slack Workspace where the bot is installed.<pre class="prettyprint source"><code>    '/dieroll'
+    The default die has possible outcomes between 1 and 6. This die is rolled once. The outcome is the value of the single number rolled.
+
+    '/dieroll 8 10'
+    The die now has possible outcomes between 1 and 8. This die is rolled 10 times. The outcome is the average of all rolls.
+</code></pre>
+</li>
+</ul>
 <h3>CoinFlip</h3>
 <ul>
 <li>Slash Command:
@@ -219,13 +330,13 @@ $ npm watch
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CoinFlipper.html">CoinFlipper</a></li><li><a href="Helper.html">Helper</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addTomap">addTomap</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#convertHMSactsasahelperfunctiontoconvertHH:MM:SStimeformattomillisecondssothatitworkswithsetTimeoutinsetCountdown">convertHMS acts as a helper function to convert HH:MM:SS time format to milliseconds so that it works with setTimeout in setCountdown</a></li><li><a href="global.html#dieRoll">dieRoll</a></li><li><a href="global.html#eachRoll">eachRoll</a></li><li><a href="global.html#getTimer">getTimer</a></li><li><a href="global.html#millis">millis</a></li><li><a href="global.html#regx">regx</a></li><li><a href="global.html#setCountdownrespondstoSlashCommand'/countdown'whenavalidtimeinputinHH:MM:SSformatfollowsthecommand">setCountdown responds to Slash Command '/countdown' when a valid time input in HH:MM:SS format follows the command</a></li><li><a href="global.html#setTimer">setTimer</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timeMap">timeMap</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CoinFlipper.html">CoinFlipper</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addTomap">addTomap</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#convertHMS">convertHMS</a></li><li><a href="global.html#dieRoll">dieRoll</a></li><li><a href="global.html#eachRoll">eachRoll</a></li><li><a href="global.html#getTimer">getTimer</a></li><li><a href="global.html#setCountdown">setCountdown</a></li><li><a href="global.html#setTimer">setTimer</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timeMap">timeMap</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Wed Sep 09 2020 09:37:52 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Thu Sep 10 2020 10:15:14 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

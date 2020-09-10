@@ -98,129 +98,13 @@
 
         
             
-<h4 class="name" id="millis"><span class="type-signature"></span>millis<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_countdown.js.html">modules/countdown.js</a>, <a href="modules_countdown.js.html#line24">line 24</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="regx"><span class="type-signature"></span>regx<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_countdown.js.html">modules/countdown.js</a>, <a href="modules_countdown.js.html#line12">line 12</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
 <h4 class="name" id="timeMap"><span class="type-signature"></span>timeMap<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    timeMap object to store user
+    timeMap object to store user.
 </div>
 
 
@@ -258,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_timer.js.html">modules/timer.js</a>, <a href="modules_timer.js.html#line9">line 9</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -286,7 +170,7 @@
     
 
     
-    <h4 class="name" id="addTomap"><span class="type-signature"></span>addTomap<span class="signature">(current_time, user, forUser)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="addTomap"><span class="type-signature"></span>addTomap<span class="signature">(currentTime, user, forUser)</span><span class="type-signature"></span></h4>
     
 
     
@@ -294,7 +178,7 @@
 
 
 <div class="description">
-    addTomap adds to the timeMap object current time, user and second user if timer is set for someone else
+    addTomap adds to the timeMap object currentTime, user, and forUser if the timer is set for someone else.
 </div>
 
 
@@ -330,7 +214,7 @@
 
         <tr>
             
-                <td class="name"><code>current_time</code></td>
+                <td class="name"><code>currentTime</code></td>
             
 
             <td class="type">
@@ -346,7 +230,7 @@
 
             
 
-            <td class="description last">capture time stamp</td>
+            <td class="description last">captures time stamp.</td>
         </tr>
 
     
@@ -369,7 +253,7 @@
 
             
 
-            <td class="description last">user from the object received from the Slack API who is setting timmer</td>
+            <td class="description last">who set the timer.</td>
         </tr>
 
     
@@ -392,7 +276,7 @@
 
             
 
-            <td class="description last">user from the object received from the Slack API  for whom timmer was set</td>
+            <td class="description last">who the timer is meant for.</td>
         </tr>
 
     
@@ -433,7 +317,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_timer.js.html">modules/timer.js</a>, <a href="modules_timer.js.html#line99">line 99</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -469,7 +353,7 @@
     
 
     
-    <h4 class="name" id="calculateTime"><span class="type-signature"></span>calculateTime<span class="signature">(user)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="calculateTime"><span class="type-signature"></span>calculateTime<span class="signature">(name)</span><span class="type-signature"></span></h4>
     
 
     
@@ -477,7 +361,7 @@
 
 
 <div class="description">
-    calculateTime helps to calculate difference beetween time when timer was set and time when timer was stoped
+    calculateTime helper function to calculate the time difference between the beginning and end of timer.
 </div>
 
 
@@ -513,7 +397,7 @@
 
         <tr>
             
-                <td class="name"><code>user</code></td>
+                <td class="name"><code>name</code></td>
             
 
             <td class="type">
@@ -529,7 +413,7 @@
 
             
 
-            <td class="description last">user name received from the Slack API who is setting timmer</td>
+            <td class="description last">of the user setting timer.</td>
         </tr>
 
     
@@ -570,7 +454,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_timer.js.html">modules/timer.js</a>, <a href="modules_timer.js.html#line111">line 111</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line103">line 103</a>
     </li></ul></dd>
     
 
@@ -606,12 +490,16 @@
     
 
     
-    <h4 class="name" id="convertHMSactsasahelperfunctiontoconvertHH:MM:SStimeformattomillisecondssothatitworkswithsetTimeoutinsetCountdown"><span class="type-signature"></span>convertHMS acts as a helper function to convert HH:MM:SS time format to milliseconds so that it works with setTimeout in setCountdown<span class="signature">(time)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="convertHMS"><span class="type-signature"></span>convertHMS<span class="signature">(time)</span><span class="type-signature"></span></h4>
     
 
     
 
 
+
+<div class="description">
+    convertHMS acts as a helper function to convert HH:MM:SS time format to milliseconds so that it works with setTimeout in setCountdown.
+</div>
 
 
 
@@ -662,7 +550,7 @@
 
             
 
-            <td class="description last">a string representing the time the user wants to set a countdown for, in HH:MM:SS format, passed by the user in command.text</td>
+            <td class="description last">a string representing the time the user wants to set a countdown for, in HH:MM:SS format, passed by the user in command.text.</td>
         </tr>
 
     
@@ -703,7 +591,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_countdown.js.html">modules/countdown.js</a>, <a href="modules_countdown.js.html#line41">line 41</a>
+        <a href="countdown.js.html">countdown.js</a>, <a href="countdown.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -739,12 +627,16 @@
     
 
     
-    <h4 class="name" id="dieRoll"><span class="type-signature"></span>dieRoll<span class="signature">(command)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="dieRoll"><span class="type-signature"></span>dieRoll<span class="signature">(command)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    dieRoll evaluates user input then executes helper function to return a string.
+</div>
 
 
 
@@ -836,7 +728,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_dieRoll.js.html">modules/dieRoll.js</a>, <a href="modules_dieRoll.js.html#line7">line 7</a>
+        <a href="dieRoll.js.html">dieRoll.js</a>, <a href="dieRoll.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -861,6 +753,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    returns a string with die rolled or average of all dice rolled when the roll parameter is greater than one.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -872,12 +786,16 @@
     
 
     
-    <h4 class="name" id="eachRoll"><span class="type-signature"></span>eachRoll<span class="signature">(sides, rolls)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="eachRoll"><span class="type-signature"></span>eachRoll<span class="signature">(sides, rolls)</span><span class="type-signature"> &rarr; {Number}</span></h4>
     
 
     
 
 
+
+<div class="description">
+    eachRoll acts as a helper function to generate a random number for the die roll outcome.
+</div>
 
 
 
@@ -920,7 +838,7 @@
             <td class="type">
             
                 
-<span class="param-type">Numeral</span>
+<span class="param-type">Number</span>
 
 
             
@@ -949,7 +867,7 @@
             <td class="type">
             
                 
-<span class="param-type">Numeral</span>
+<span class="param-type">Number</span>
 
 
             
@@ -1006,7 +924,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_dieRoll.js.html">modules/dieRoll.js</a>, <a href="modules_dieRoll.js.html#line32">line 32</a>
+        <a href="dieRoll.js.html">dieRoll.js</a>, <a href="dieRoll.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -1031,6 +949,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    returns the random number rolled or the average of all random numbers rolled when the parameter roll is greater than 1.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1050,7 +990,7 @@
 
 
 <div class="description">
-    getTimer helps get current spent time whout stopping timer
+    getTimer helps get current spent time whout stopping timer.
 </div>
 
 
@@ -1102,7 +1042,7 @@
 
             
 
-            <td class="description last">An object received from the Slack API</td>
+            <td class="description last">an object received from the Slack API.</td>
         </tr>
 
     
@@ -1125,7 +1065,7 @@
 
             
 
-            <td class="description last">callback  function to give response back to user</td>
+            <td class="description last">callback function to give response to user.</td>
         </tr>
 
     
@@ -1166,7 +1106,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_timer.js.html">modules/timer.js</a>, <a href="modules_timer.js.html#line72">line 72</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line66">line 66</a>
     </li></ul></dd>
     
 
@@ -1202,12 +1142,16 @@
     
 
     
-    <h4 class="name" id="setCountdownrespondstoSlashCommand'/countdown'whenavalidtimeinputinHH:MM:SSformatfollowsthecommand"><span class="type-signature"></span>setCountdown responds to Slash Command '/countdown' when a valid time input in HH:MM:SS format follows the command<span class="signature">(command, say)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setCountdown"><span class="type-signature">(async) </span>setCountdown<span class="signature">(command, say)</span><span class="type-signature"></span></h4>
     
 
     
 
 
+
+<div class="description">
+    setCountdown responds to Slash Command '/countdown' when a valid time input in HH:MM:SS format follows the command.
+</div>
 
 
 
@@ -1259,7 +1203,9 @@
             
 
             <td class="description last">an object containing information related to user input object, including these properties:
+
 user_id,
+
 text</td>
         </tr>
 
@@ -1283,7 +1229,7 @@ text</td>
 
             
 
-            <td class="description last">prompts app to output the response passed into it as a parameter</td>
+            <td class="description last">prompts app to output the response passed into it as a parameter.</td>
         </tr>
 
     
@@ -1324,7 +1270,7 @@ text</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_countdown.js.html">modules/countdown.js</a>, <a href="modules_countdown.js.html#line3">line 3</a>
+        <a href="countdown.js.html">countdown.js</a>, <a href="countdown.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -1368,7 +1314,7 @@ text</td>
 
 
 <div class="description">
-    setTimer helps set timer for user using moment library
+    setTimer helps set timer for user using moment library.
 </div>
 
 
@@ -1420,7 +1366,7 @@ text</td>
 
             
 
-            <td class="description last">An object received from the Slack API</td>
+            <td class="description last">an object received from the Slack API.</td>
         </tr>
 
     
@@ -1443,7 +1389,7 @@ text</td>
 
             
 
-            <td class="description last">callback  function to give response back to user</td>
+            <td class="description last">callback function to give response to user.</td>
         </tr>
 
     
@@ -1484,7 +1430,7 @@ text</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_timer.js.html">modules/timer.js</a>, <a href="modules_timer.js.html#line18">line 18</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -1528,7 +1474,7 @@ text</td>
 
 
 <div class="description">
-    stopTimer helps stop timer and get response with time user spent
+    stopTimer helps stop timer and get response with time user spent.
 </div>
 
 
@@ -1580,7 +1526,7 @@ text</td>
 
             
 
-            <td class="description last">An object received from the Slack API</td>
+            <td class="description last">an object received from the Slack API.</td>
         </tr>
 
     
@@ -1603,7 +1549,7 @@ text</td>
 
             
 
-            <td class="description last">callback  function to give response back to user</td>
+            <td class="description last">callback function to give response to user.</td>
         </tr>
 
     
@@ -1644,7 +1590,7 @@ text</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_timer.js.html">modules/timer.js</a>, <a href="modules_timer.js.html#line40">line 40</a>
+        <a href="timer.js.html">timer.js</a>, <a href="timer.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -1690,13 +1636,13 @@ text</td>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CoinFlipper.html">CoinFlipper</a></li><li><a href="Helper.html">Helper</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addTomap">addTomap</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#convertHMSactsasahelperfunctiontoconvertHH:MM:SStimeformattomillisecondssothatitworkswithsetTimeoutinsetCountdown">convertHMS acts as a helper function to convert HH:MM:SS time format to milliseconds so that it works with setTimeout in setCountdown</a></li><li><a href="global.html#dieRoll">dieRoll</a></li><li><a href="global.html#eachRoll">eachRoll</a></li><li><a href="global.html#getTimer">getTimer</a></li><li><a href="global.html#millis">millis</a></li><li><a href="global.html#regx">regx</a></li><li><a href="global.html#setCountdownrespondstoSlashCommand'/countdown'whenavalidtimeinputinHH:MM:SSformatfollowsthecommand">setCountdown responds to Slash Command '/countdown' when a valid time input in HH:MM:SS format follows the command</a></li><li><a href="global.html#setTimer">setTimer</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timeMap">timeMap</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CoinFlipper.html">CoinFlipper</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addTomap">addTomap</a></li><li><a href="global.html#calculateTime">calculateTime</a></li><li><a href="global.html#convertHMS">convertHMS</a></li><li><a href="global.html#dieRoll">dieRoll</a></li><li><a href="global.html#eachRoll">eachRoll</a></li><li><a href="global.html#getTimer">getTimer</a></li><li><a href="global.html#setCountdown">setCountdown</a></li><li><a href="global.html#setTimer">setTimer</a></li><li><a href="global.html#stopTimer">stopTimer</a></li><li><a href="global.html#timeMap">timeMap</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Wed Sep 09 2020 09:37:52 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Thu Sep 10 2020 10:15:14 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
