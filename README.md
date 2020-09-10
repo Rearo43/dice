@@ -92,7 +92,41 @@ These are the currently available slash commands for this bot application.
 - `NOTE:` Ensure you have read through all the [Installation](#installation) instructions to make sure you have set up your Slack App to work with these commands.
 
 ### Timer
-Info coming soon...
+- Slash Command:
+    - `/settimer`
+- Description:
+    - Set timer - helps to count time, the time starts count from the moment when user set it. Also user can set timer for someome else.
+   - Optional parameter can be @username if user wants to set timer for another user.
+- Example: These commands are executed within the Slack Workspace where the bot is installed.
+  ```
+       /settimer
+       @kshydlovska  your timer is set.
+       @someone,  @kshydlovska just started timer for you.
+  ```
+- Slash Command:
+    - `/gettimer`
+- Description:
+    - Get timer - helps get current spent time whout stopping timer. Also any user can get current time for themself or someome else.
+   - Optional parameter can be @username if user wants to get timer for another user.
+- Example: These commands are executed within the Slack Workspace where the bot is installed.
+  ```
+       /gettimer
+       @kshydlovska your current time is.
+       @someone, your current time is.
+  ```
+- Slash Command:
+    - `/stoptimer`
+- Description:
+   - Stop timer - stops timer and send response with time user spent
+   - Optional parameter can be @username if user wants to stop timer for another user, but user can stop timer for another user ony if he set it. In case if user set timer for themself nobody else can't stop it.
+- Example: These commands are executed within the Slack Workspace where the bot is installed.
+  ```
+       /stoptimer
+       @kshydlovska spent (and actualy time spent).
+       @someone spent (and actualy time spent).
+       Sorry @kshyd you cannot perform this operation.
+  ```
+
 
 
 ### Countdown
