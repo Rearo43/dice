@@ -49,7 +49,7 @@ Before we can get to running this application locally, you will need to create y
 - [Slack API](https://api.slack.com/authentication/basics)
 
 To see follow the steps we used to set up this bot checkout these set up instructions. This will go over creating a slack app, setting up initial scope, enabling listening events, and adding the appropriate slash commands required to run this project.
-- [BotBot Setup Instructions](./slackBotInstructions.md)
+- [Bot Setup Instructions](./slackBotInstructions.md)
 
 Once you have completed the initial creation of your slack app, we can move into assigning some environment variables. In this project we use `dotenv` library to hold these values. Start off by creating this file.
 
