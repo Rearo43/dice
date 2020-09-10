@@ -5,6 +5,9 @@ jest.mock('lodash');
 
 const { dieRoll, eachRoll } = require('../../../src/modules//dieRoll.js');
 
+const slackObjEmpty = {text: ''};
+const slackObjInput = {text: '5 4'};
+
 it('Should run helper function with default values', () => {
   _.random.mockImplementation(() => 3);
 
@@ -20,8 +23,12 @@ it('Should run with user input', () => {
 
 it('Should run with user input', () => {
   _.random.mockImplementation(() => 3);
-
-  let userInput = '5 4';
   
-  expect(dieRoll(userInput)).toMatch('The average sum of your die rolls is 3.');
+  expect(dieRoll(slackObjEmpty)).toMatch('The average sum of your die rolls is 3.');
+});
+
+it('Should run with user input', () => {
+  _.random.mockImplementation(() => 3);
+
+  expect(dieRoll(slackObjInput)).toMatch('The average sum of your die rolls is 3.');
 });

@@ -12,7 +12,8 @@ function dieRoll(command) {
   let mid = userInput.indexOf(' ');
 
   if(!userInput) {
-    return`The number ${eachRoll()} was rolled.`;
+    return `:die-${eachRoll()}:`;
+    // return`The number ${eachRoll()} was rolled.`;
   }
 
   else {
@@ -20,7 +21,8 @@ function dieRoll(command) {
     let rolls = parseInt(userInput.slice(mid, (userInput.length)));
     let answerBack = eachRoll(sides, rolls);
 
-    return `The average sum of your die rolls is ${answerBack}.`;
+    return `After ${rolls} rolls, the average of the dice rolled was :die-${answerBack}:`;
+    // return `The average sum of your die rolls is ${answerBack}.`;
   }
 }
 
@@ -40,7 +42,7 @@ function eachRoll(sides = 6, rolls = 1) {
     total += num;
   }
    
-  return (total / rolls);
+  return Math.floor(total / rolls);
 }
 
 module.exports = {dieRoll, eachRoll};
