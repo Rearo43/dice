@@ -19,28 +19,7 @@
 
     <h1 class="page-title">Home</h1>
 
-    
-
-
-
-    
-
-
     <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
 
     <section>
         <article><h1>Roberto the SlackBot</h1>
@@ -72,12 +51,16 @@
 </li>
 </ul>
 <h2>Overview</h2>
+<a name="#overview"></a>
 <h2>Project Management Board</h2>
+<a name="project-management-board"></a>
 <p>This project utilizes GitHub Workflow / Projects boards. You can visit this board and see agile practices in action by clicking the link below.
 <a href="https://github.com/orgs/401Mid/projects/1">Workflow Board</a></p>
 <h2>Software Requirements</h2>
+<a name="software-requirements"></a>
 <p>Please visit this link to view the <a href="./requirements.md">Software Requirements</a></p>
 <h2>Installation</h2>
+<a name="installation"></a>
 <p>First clone down a copy of the repository from here <a href="https://github.com/401Mid/project">Repo Link</a>.</p>
 <pre class="prettyprint source lang-bash"><code>$ git clone https://github.com/401Mid/project/
 </code></pre>
@@ -103,6 +86,7 @@ PORT: # Port number that you wish to use when running locally
 </code></pre>
 <p>Almost there! You have completed the initial setup of this bot application, leading into deploying and using this bot.</p>
 <h2>Deployment</h2>
+<a name="deployment"></a>
 <p>These instructions will over how to deploy it locally utilizing <code>localhost</code> and a tunneling library called <code>ngrok</code>. In order for you to successfully run this bot locally you will need some way for outside users to access your <code>localhost</code> url. <code>ngrok</code> Exposes a local webserver to the internet. Please review the official documentation at the link below.</p>
 <ul>
 <li><a href="https://ngrok.com/docs">ngrok Documentation</a></li>
@@ -121,11 +105,13 @@ PORT: # Port number that you wish to use when running locally
 </ul>
 <p>You are finally ready to see your bot in action! You can now travel over to your Slack Workspace where you have installed your bot and start using the built-in commands.</p>
 <h2>Commands</h2>
+<a name="commands"></a>
 <p>These are the currently available slash commands for this bot application.</p>
 <ul>
 <li><code>NOTE:</code> Ensure you have read through all the <a href="#installation">Installation</a> instructions to make sure you have set up your Slack App to work with these commands.</li>
 </ul>
 <h3>Timer</h3>
+<a name="timer"></a>
 <ul>
 <li>Slash Command:
 <ul>
@@ -178,6 +164,7 @@ PORT: # Port number that you wish to use when running locally
 </li>
 </ul>
 <h3>Countdown</h3>
+<a name="countdown"></a>
 <ul>
 <li>Slash Command:
 <ul>
@@ -222,6 +209,7 @@ For example: 00:30:00 will set a countdown for 30 minutes.
 </li>
 </ul>
 <h3>DieRoll</h3>
+<a name="dieroll"></a>
 <ul>
 <li>Slash Command:
 <ul>
@@ -243,6 +231,7 @@ For example: 00:30:00 will set a countdown for 30 minutes.
 </li>
 </ul>
 <h3>CoinFlip</h3>
+<a name="coinflip"></a>
 <ul>
 <li>Slash Command:
 <ul>
@@ -264,8 +253,10 @@ For example: 00:30:00 will set a countdown for 30 minutes.
 </li>
 </ul>
 <h2>UML Data Model</h2>
+<a name="uml-data-model"></a>
 <p><img src="./assets/uml.png" alt="UML"></p>
 <h2>Approach to Testing</h2>
+<a name="approach-to-testing"></a>
 <p>In this application we are utilizing a testing library called <code>jest</code>. We have automated unit and integration tests for the current state of this application.</p>
 <ul>
 <li><code>NOTE:</code> Anything you change / add on this application may or may not break these tests and that is the risk you have to take.
@@ -276,11 +267,13 @@ Currently this application is configured to run the following command</li>
 $ npm watch
 </code></pre>
 <h2>JSDocs</h2>
+<a name ="jsdocs"></a>
 <p>Throughout our project we have utilized Docstrings and are using a third party library called <code>JSDocs</code>. This library will produce an browsable HTML file, that contains all the functions, classes, and methods that this application has to offer. To get these files you can execute the following script.</p>
 <pre class="prettyprint source lang-bash"><code>$ npm run build-documentation
 </code></pre>
 <p>This will create a <code>./public</code> folder within the root of the project. Inside you will find all the created HTML files from this project. You can now launch <code>index.html</code> from your favorite browser!</p>
 <h2>Authors</h2>
+<a name="authors"></a>
 <ul>
 <li>Software Developer: Cas Ibrahim
 <ul>
@@ -304,12 +297,15 @@ $ npm watch
 </li>
 </ul>
 <h2>Collaborations</h2>
+<a name="collaborations"></a>
 <ul>
 <li>none</li>
 </ul>
 <h2>License</h2>
+<a name="license"></a>
 <p>This project is under the <a href="./LICENSE">MIT License</a>.</p>
 <h2>Acknowledgements / Resources</h2>
+<a name="acknowledgements-/-resources"></a>
 <ul>
 <li><a href="https://github.com/slackapi/bolt-js">Bolt.js for SlackBots</a></li>
 <li><a href="https://ngrok.com/docs">ngrok documentation</a></li>
