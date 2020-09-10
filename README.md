@@ -136,7 +136,7 @@ These are the currently available slash commands for this bot application.
     - Prompts the user to enter the time they would like to set a countdown for, in HH:MM:SS format.
     - HH:MM:SS is converted to milliseconds behind the scenes and the Bot will alert the user when their input time ahas elapsed
     - If the user inputs an invalid time, the Bot will prompt the user to try again and remind the user of the format needed.
-        - Valid Input Examples:
+        - This command is executed within the Slack Workspace where the bot is installed:
         ```
         User: /countdown 00:01:30
 
