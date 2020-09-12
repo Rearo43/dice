@@ -2,18 +2,10 @@
   "name": "roberto",
   "version": "4.1.0",
   "contributors": [
-    {
-      "name": "cas ibrahim"
-    },
-    {
-      "name": "reagan roberts"
-    },
-    {
-      "name": "kateryna shydlovska"
-    },
-    {
-      "name": "joseph zabaleta"
-    }
+    "cas ibrahim",
+    "reagan roberts",
+    "kateryna shydlovska",
+    "joseph zabaleta"
   ],
   "description": "a helpful bot to automate decisions",
   "main": "src/app.js",
@@ -33,7 +25,7 @@
     "node": "14.x"
   },
   "repository": {
-    "url": "https://github.com/401Mid/project"
+    "url": "git+https://github.com/401Mid/project.git"
   },
   "license": "MIT",
   "keywords": [
@@ -44,5 +36,13 @@
   "devDependencies": {
     "jest": "^26.4.2",
     "jsdoc": "^3.6.5"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/401Mid/project/issues"
+  },
+  "homepage": "https://github.com/401Mid/project#readme",
+  "directories": {
+    "doc": "docs"
+  },
+  "author": ""
 }
