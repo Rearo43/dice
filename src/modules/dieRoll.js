@@ -27,7 +27,7 @@ function dieRoll(command) {
     // let rolls = parseInt(userInput.slice(mid, (userInput.length)));
     // let answerBack = eachRoll(sides, rolls);
 
-    return `<@${command.user_id}> rolled a die and after rolls, the average of the dice rolled was... ${eachRoll(sides)}`;
+    return `<@${command.user_id}> rolled ${eachRoll(sides)}`;
   }
 }
 
