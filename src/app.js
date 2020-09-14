@@ -35,14 +35,12 @@ app.command('/dieroll', async ({ command, ack, say }) => {
 
 app.command('/wordgame', async ({ command, ack, say }) => {
     await ack();
-    console.log(app.message.channels);
     await say(randomLetters(command));
 });
 
 app.message('/game', async ({ command, ack, say }) => {
-  await ack();
-  // console.log(command);
-  await say('hey');
+    await ack();
+    await say('hey');
 });
 
 
